@@ -4,16 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
-
-    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    
+    
 </head>
 <body>
-    <main class="container">
-        <form action="">
-            <article>
-                <p>prueba merge</p>
-            </article>
+    <main class="container-modal">
+        <section class="x-btn">
+            <button>X</button>
+        </section>
+        <h2>NEW EVENT</h2>    
+        <form action="" class="form">
+            <fieldset>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </fieldset>
+            <fieldset>
+                <label for="date">Initial date:</label>
+                <input type="date" id="date" name="date">
+            </fieldset>
+            <fieldset>
+                <label for="endDateCheck">End date:</label>
+                <input type="checkbox" id="endDateCheck" name="endDateCheck">
+            </fieldset>
+            <fieldset>
+                <label for="endDateCalendar">End date:</label>
+                <input type="date" id="endDateCalendar" name="endDateCalendar">
+            </fieldset>
+            <fieldset>
+                <label for="remainder"></label>
+                <input type="checkbox" id="remainder" name="remainder">
+            </fieldset>
+            <fieldset>
+                <label for="description">Description:</label>
+                <input type="text">
+            </fieldset>
+            <fieldset>
+                <label for="eventType">Event type:</label>
+                <select name="eventType" id="eventType">
+                    <option value="meeting">Meeting</option>
+                </select>
+            </fieldset>
+            <div class="botones">
+                <button>Cancel</button>
+                <button>Create</button>
+            </div>
         </form>
     </main>
     <section class="main-content">
