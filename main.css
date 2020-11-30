@@ -148,11 +148,18 @@ header button {
     max-width: 1200px;
     padding: 20px 20px;
     border: 1px grey solid;
-    margin: 30px auto;
+    margin: 50px auto;
+    display: none;
+    z-index: 1;
+    position: fixed;
+    right: 50%;
+    transform: translate(50%); 
+    background-color: white;/* Black w/ opacity */
+  }
 }
-x-btn{
+.x-btn{
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
 }
 .container-modal h2{
     text-align: center;
@@ -188,4 +195,19 @@ button{
 button:last-child{
     margin-right: 0;
 }
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
