@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+}
+
+.flex-container-month-layout{
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container-month-layout ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.flex-container-month-layout ul li{
+    width: calc(100%/7);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 40%;
+    padding: 2px;
+}
+
+.days-container li {
+    min-height: 60px;
+}
+
+.weekday-names li {
+    height: 20px;
+    min-width: fit-content;
+    justify-content: center;
+    align-content: center;
+}
+
+/* BORDERS */
+.flex-container-month-layout {
+    border: 3px solid rgb(197, 197, 197);
+    border-radius: 2px;
+}
+
+.weekday-names {
+    border-bottom: 1px solid rgb(55, 55, 55);
+}
+
+.weekday-names li {
+    border-right: 1px solid rgb(55, 55, 55);
+}
+
+.weekday-names li:last-child {
+    border-right: none;
+}
+
+.days-container li:nth-child(7), .days-container li:nth-child(14), .days-container li:nth-child(21), .days-container li:nth-child(28), .days-container li:nth-child(35) {
+    border-right: none;
+}
+
+.days-container li:nth-child(1), .days-container li:nth-child(8), .days-container li:nth-child(15), .days-container li:nth-child(22), .days-container li:nth-child(29), .days-container li:nth-child(36) {
+    border-left: none;
+}
+
+.days-container li:nth-child(1), .days-container li:nth-child(2), .days-container li:nth-child(3), .days-container li:nth-child(4), .days-container li:nth-child(5), .days-container li:nth-child(6), .days-container li:nth-child(7){
+    border-top: none;
+}
+
+.days-container li:nth-child(29), .days-container li:nth-child(30), .days-container li:nth-child(31), .days-container li:nth-child(32), .days-container li:nth-child(33), .days-container li:nth-child(34), .days-container li:nth-child(35){
+    border-bottom: none;
+}
+
+.days-container li{
+    border: 1px solid  rgb(55, 55, 55);
+}
