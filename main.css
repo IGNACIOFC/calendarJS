@@ -92,3 +92,25 @@ html, body {
     height: 20px;
     width: 20px;
 }
+
+/* New event button in each day */
+.day-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+}
+.new-event-day {
+    font-size: 7px;
+    text-align: center;
+    padding: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+    width: 50%;
+}
+
+.new-event-day-hidden {
+    display: none;
+}
