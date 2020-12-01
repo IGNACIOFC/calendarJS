@@ -109,7 +109,7 @@ function displayNewEventButton (e) {
         buttonElement.appendChild(buttonText);
         var newEventButton = e.target.appendChild(buttonElement);
         newEventButton.classList.add("new-event-day");
-        document.querySelector(".new-event-day").addEventListener("click",function () {alert("openmodal")});
+        document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";});
     }
 
 }
