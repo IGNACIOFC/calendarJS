@@ -99,19 +99,21 @@ function getWeekDay () {
 /* DISPLAY NEW EVENT BUTTON */
 monthDaysArray.forEach(element => {
     element.addEventListener("mouseover", displayNewEventButton);
-    element.addEventListener("mouseout", removeNewEventButton);
+    element.addEventListener("mouseleave", removeNewEventButton);
 });
 function displayNewEventButton (e) {
-
     if (e.target.innerHTML!="") {
+        e.target.removeEventListener("mouseover", displayNewEventButton);
         var buttonElement = document.createElement("button");
         var buttonText = document.createTextNode("New");
         buttonElement.appendChild(buttonText);
         var newEventButton = e.target.appendChild(buttonElement);
         newEventButton.classList.add("new-event-day");
-        /* e.target.innerHTML += `<button class="new-event-day">New</button>`; */
+        document.querySelector(".new-event-day").addEventListener("click",function () {alert("openmodal")});
     }
+
 }
 function removeNewEventButton (e) {
+    e.target.addEventListener("mouseover", displayNewEventButton);
     e.target.lastChild.remove();
 }
