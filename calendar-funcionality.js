@@ -18,6 +18,7 @@ function displayMonths () {
             document.querySelector(".month").innerHTML = monthArray[index+1];
             actualMonth = monthArray[index+1];
             console.log(actualMonth);
+            getWeekDay ();
             break;
         } else if (actualMonth === monthArray[11]) {
             document.querySelector(".month").innerHTML = monthArray[0];
@@ -27,4 +28,41 @@ function displayMonths () {
             break;
         }
 }
+}
+
+function getWeekDay () {
+    var actualMonthNumber;
+    for (let index = 0; index < monthArray.length; index++) {
+        if (monthArray[index]===actualMonth) {
+            actualMonthNumber = index + 1;
+            break;
+        };
+    }
+    console.log(actualYear);
+    console.log(actualMonthNumber);
+    var firstDay = new Date (actualYear, actualMonthNumber - 1, 1);
+    console.log(firstDay.getDay());
+    firstDayNumber = firstDay.getDay();
+    let monthDaysArray = document.querySelectorAll(".days-container li");
+
+    var numberOfDays;
+
+    if (actualMonthNumber === 1 || actualMonthNumber === 3 || actualMonthNumber === 5 || actualMonthNumber === 7 || actualMonthNumber === 8 || actualMonthNumber === 10 || actualMonthNumber === 12) {
+        numberOfDays = 31;
+    } else if (actualMonthNumber === 4 || actualMonthNumber === 6 || actualMonthNumber === 9 || actualMonthNumber === 11) {
+        numberOfDays = 30;
+    } else if (actualMonthNumber === 2) {
+        numberOfDays = 28;
+    }
+    monthDaysArray.forEach(element => {
+        element.innerHTML = "";
+    });
+    console.log(numberOfDays);
+    for (let index = 1; index <= numberOfDays; index++) {
+        if (firstDayNumber===0) {
+            firstDayNumber = 7;
+        }
+        monthDaysArray[(firstDayNumber-1)].innerHTML = index;
+        firstDayNumber ++;
+    }
 }
