@@ -20,14 +20,15 @@
             </section>
             <section class="title">
                 <h2>NEW EVENT</h2> 
-            </section>   
-            <form action="" class="form">
+            </section>  
+            <form action="/" method="GET" id="form"> 
                 <fieldset>
-                    <input type="text" id="eventTitle" name="eventTitle" placeholder="Title">
+                    <input type="text" id="eventTitle" name="eventTitle" placeholder="Title" maxlength="60">
+                    <p id="errorTitle"></p>
                 </fieldset>
                 <fieldset>
                     <label for="date">Initial date:</label>
-                    <input type="date" id="date" name="date">
+                    <input type="datetime-local" id="date" name="date">
                 </fieldset>
                 <fieldset class="form-check">
                     <input type="checkbox" id="endDateCheck" name="endDateCheck">
@@ -35,24 +36,37 @@
                 </fieldset>
                 <fieldset>
                     <label for="endDateCalendar">End date:</label>
-                    <input type="date" id="endDateCalendar" name="endDateCalendar">
+                    <input type="datetime-local" id="endDateCalendar" name="endDateCalendar">
                 </fieldset>
                 <fieldset class="form-check">
                     <input type="checkbox" id="remainder" name="remainder">
                     <label for="remainder">Remaind me when the event expires</label>
                 </fieldset>
+                <fieldset class="select-form">
+                    <label for="time">Time:</label>
+                    <select name="time" id="time">
+                        <option value="5 min">5 min</option>
+                        <option value="10 min">10 min</option>
+                        <option value="15 min">15 min</option>
+                        <option value="30 min">30 min</option>
+                        <option value="1 h">1 h</option>
+                    </select>
+                </fieldset>
                 <fieldset >
-                    <input class="form-description" type="text" id="description" name="description" placeholder="Description">
+                    <input class="form-description" type="text" id="description" name="description" placeholder="Description" maxlength="500">
                 </fieldset>
                 <fieldset class="select-form">
                     <label for="eventType">Event type:</label>
                     <select name="eventType" id="eventType">
                         <option value="meeting">Meeting</option>
+                        <option value="personal">Personal</option>
+                        <option value="study">Study</option>
+
                     </select>
                 </fieldset>
                 <div class="botones">
                     <button class="button-form">Cancel</button>
-                    <button class="button-form">Create</button>
+                    <input type="submit" class="button-form" value="Create"></input>
                 </div>
             </form>
         </main>
