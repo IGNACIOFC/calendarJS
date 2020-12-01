@@ -12,22 +12,51 @@ var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
 console.log(actualYear);
 console.log(actualMonth);
-function displayMonths () {
-    for (let index = 0; index < monthArray.length; index++) {
-        if (monthArray[index]===actualMonth) {
-            document.querySelector(".month").innerHTML = monthArray[index+1];
-            actualMonth = monthArray[index+1];
-            console.log(actualMonth);
-            getWeekDay ();
-            break;
-        } else if (actualMonth === monthArray[11]) {
-            document.querySelector(".month").innerHTML = monthArray[0];
-            actualMonth = monthArray[0];
-            actualYear = parseInt(actualYear) + 1;
-            document.querySelector(".year").innerHTML = actualYear;
-            break;
+function displayMonths (e) {
+    if(e.target.className.includes("right")){
+        switch (actualMonth) {
+            case "December":
+                document.querySelector(".month").innerHTML = monthArray[0];
+                actualMonth = monthArray[0];
+                actualYear = parseInt(actualYear) + 1;
+                document.querySelector(".year").innerHTML = actualYear;
+                getWeekDay ();
+                break;
+        
+            default:
+                for (let index = 0; index < monthArray.length; index++) {
+                    if (monthArray[index]===actualMonth) {
+                        document.querySelector(".month").innerHTML = monthArray[index+1];
+                        actualMonth = monthArray[index+1];
+                        console.log(actualMonth);
+                        getWeekDay ();
+                        break;
+                    }
+                }
         }
-}
+    } else if (e.target.className.includes("left")) {
+        switch (actualMonth) {
+            case "January":
+                document.querySelector(".month").innerHTML = monthArray[11];
+                actualMonth = monthArray[11];
+                actualYear = parseInt(actualYear) - 1;
+                document.querySelector(".year").innerHTML = actualYear;
+                getWeekDay ();
+                break;
+        
+            default:
+                for (let index = 0; index < monthArray.length; index++) {
+                    if (monthArray[index]===actualMonth) {
+                        document.querySelector(".month").innerHTML = monthArray[index-1];
+                        actualMonth = monthArray[index-1];
+                        console.log(actualMonth);
+                        getWeekDay ();
+                        break;
+                    }
+                }
+        }
+    }
+    
 }
 
 function getWeekDay () {
