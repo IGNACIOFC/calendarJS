@@ -1,6 +1,4 @@
-/* function addNewEvent (title, day) {
-
-} */
+/* CALENDAR NAVEGATION */
 const previusButton = document.querySelector(".previus-button");
 const nextButton = document.querySelector(".next-button");
 
@@ -10,24 +8,56 @@ previusButton.addEventListener("click", displayMonths);
 nextButton.addEventListener("click", displayMonths);
 var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
-console.log(actualYear);
-console.log(actualMonth);
-function displayMonths () {
-    for (let index = 0; index < monthArray.length; index++) {
-        if (monthArray[index]===actualMonth) {
-            document.querySelector(".month").innerHTML = monthArray[index+1];
-            actualMonth = monthArray[index+1];
-            console.log(actualMonth);
-            getWeekDay ();
-            break;
-        } else if (actualMonth === monthArray[11]) {
-            document.querySelector(".month").innerHTML = monthArray[0];
-            actualMonth = monthArray[0];
-            actualYear = parseInt(actualYear) + 1;
-            document.querySelector(".year").innerHTML = actualYear;
-            break;
+
+let monthDaysArray = document.querySelectorAll(".days-container li");
+
+getWeekDay ();
+
+function displayMonths (e) {
+    if(e.target.className.includes("right")){
+        switch (actualMonth) {
+            case "December":
+                document.querySelector(".month").innerHTML = monthArray[0];
+                actualMonth = monthArray[0];
+                actualYear = parseInt(actualYear) + 1;
+                document.querySelector(".year").innerHTML = actualYear;
+                getWeekDay ();
+                break;
+        
+            default:
+                for (let index = 0; index < monthArray.length; index++) {
+                    if (monthArray[index]===actualMonth) {
+                        document.querySelector(".month").innerHTML = monthArray[index+1];
+                        actualMonth = monthArray[index+1];
+                        console.log(actualMonth);
+                        getWeekDay ();
+                        break;
+                    }
+                }
         }
-}
+    } else if (e.target.className.includes("left")) {
+        switch (actualMonth) {
+            case "January":
+                document.querySelector(".month").innerHTML = monthArray[11];
+                actualMonth = monthArray[11];
+                actualYear = parseInt(actualYear) - 1;
+                document.querySelector(".year").innerHTML = actualYear;
+                getWeekDay ();
+                break;
+        
+            default:
+                for (let index = 0; index < monthArray.length; index++) {
+                    if (monthArray[index]===actualMonth) {
+                        document.querySelector(".month").innerHTML = monthArray[index-1];
+                        actualMonth = monthArray[index-1];
+                        console.log(actualMonth);
+                        getWeekDay ();
+                        break;
+                    }
+                }
+        }
+    }
+    
 }
 
 function getWeekDay () {
@@ -43,7 +73,6 @@ function getWeekDay () {
     var firstDay = new Date (actualYear, actualMonthNumber - 1, 1);
     console.log(firstDay.getDay());
     firstDayNumber = firstDay.getDay();
-    let monthDaysArray = document.querySelectorAll(".days-container li");
 
     var numberOfDays;
 
@@ -65,4 +94,26 @@ function getWeekDay () {
         monthDaysArray[(firstDayNumber-1)].innerHTML = index;
         firstDayNumber ++;
     }
+}
+
+/* DISPLAY NEW EVENT BUTTON */
+monthDaysArray.forEach(element => {
+    element.addEventListener("mouseover", displayNewEventButton);
+    element.addEventListener("mouseleave", removeNewEventButton);
+});
+function displayNewEventButton (e) {
+    if (e.target.innerHTML!="") {
+        e.target.removeEventListener("mouseover", displayNewEventButton);
+        var buttonElement = document.createElement("button");
+        var buttonText = document.createTextNode("New");
+        buttonElement.appendChild(buttonText);
+        var newEventButton = e.target.appendChild(buttonElement);
+        newEventButton.classList.add("new-event-day");
+        document.querySelector(".new-event-day").addEventListener("click",function () {alert("openmodal")});
+    }
+
+}
+function removeNewEventButton (e) {
+    e.target.addEventListener("mouseover", displayNewEventButton);
+    e.target.lastChild.remove();
 }
