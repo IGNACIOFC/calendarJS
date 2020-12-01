@@ -153,10 +153,10 @@ header button {
     z-index: 1;
     position: fixed;
     right: 50%;
-    transform: translate(50%); 
+    transform: translate(50%);
     background-color: white;/* Black w/ opacity */
   }
-}
+
 .x-btn{
     display: flex;
     justify-content: flex-end;
