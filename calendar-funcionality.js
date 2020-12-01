@@ -1,6 +1,4 @@
-/* function addNewEvent (title, day) {
-
-} */
+/* CALENDAR NAVEGATION */
 const previusButton = document.querySelector(".previus-button");
 const nextButton = document.querySelector(".next-button");
 
@@ -10,8 +8,11 @@ previusButton.addEventListener("click", displayMonths);
 nextButton.addEventListener("click", displayMonths);
 var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
-console.log(actualYear);
-console.log(actualMonth);
+
+let monthDaysArray = document.querySelectorAll(".days-container li");
+
+getWeekDay ();
+
 function displayMonths (e) {
     if(e.target.className.includes("right")){
         switch (actualMonth) {
@@ -72,7 +73,6 @@ function getWeekDay () {
     var firstDay = new Date (actualYear, actualMonthNumber - 1, 1);
     console.log(firstDay.getDay());
     firstDayNumber = firstDay.getDay();
-    let monthDaysArray = document.querySelectorAll(".days-container li");
 
     var numberOfDays;
 
@@ -94,4 +94,24 @@ function getWeekDay () {
         monthDaysArray[(firstDayNumber-1)].innerHTML = index;
         firstDayNumber ++;
     }
+}
+
+/* DISPLAY NEW EVENT BUTTON */
+monthDaysArray.forEach(element => {
+    element.addEventListener("mouseover", displayNewEventButton);
+    element.addEventListener("mouseout", removeNewEventButton);
+});
+function displayNewEventButton (e) {
+
+    if (e.target.innerHTML!="") {
+        var buttonElement = document.createElement("button");
+        var buttonText = document.createTextNode("New");
+        buttonElement.appendChild(buttonText);
+        var newEventButton = e.target.appendChild(buttonElement);
+        newEventButton.classList.add("new-event-day");
+        /* e.target.innerHTML += `<button class="new-event-day">New</button>`; */
+    }
+}
+function removeNewEventButton (e) {
+    e.target.lastChild.remove();
 }
