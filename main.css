@@ -1,14 +1,33 @@
 * {
     box-sizing: border-box;
 }
-
 html, body {
     width: 100%;
 }
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #DCE3F1;
 }
 
+.container{
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.container-modal h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.container-calendar{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F8F8F8;
+    padding: 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
 /* HEADER */
 header {
     width: 100%;
@@ -16,32 +35,41 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin: 50px 10px;
     position: relative;
-    background-color: greenyellow;
+    background-color: white;
 }
 header h2 {
-    background-color: rgb(25, 123, 90);
-}
-header button {
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    font-size: 7px;
-    width: max-content;
-}
-/* CALENDAR CONTENT */
-.main-content{
-    width: 90%;
-    margin: 0 auto;
+    font-weight: 500;
+    font-size: 25px;
 }
 
+/* CALENDAR CONTENT */
+.header{
+    border-radius: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.header h3{
+    min-width: 150px;
+}
+.month{
+    font-weight: 500;
+}
+.year{
+    font-weight: 500;
+}
+.main-content{
+    margin: 0 auto;
+    background-color: white;
+    padding: 0;
+}
 .flex-container-month-layout{
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 5px;
 }
 
 .flex-container-month-layout ul{
@@ -50,6 +78,7 @@ header button {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+
 }
 
 .flex-container-month-layout ul li{
@@ -57,8 +86,9 @@ header button {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 40%;
+    font-size: 15px;
     padding: 2px;
+
 }
 
 .days-container li {
@@ -74,22 +104,23 @@ header button {
 
 /* BORDERS */
 .main-content {
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 2px;
-    padding: 10px;
+    margin-top: 10px;
+    margin: 10px 10px;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .weekday-names {
-    border-bottom: 1px solid rgb(55, 55, 55);
-    border-top: 1px solid rgb(55, 55, 55);
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
 }
 
 .weekday-names li {
-    border-right: 1px solid rgb(55, 55, 55);
+    border-right: 1px solid lightgray;
 }
 
 .weekday-names li:first-child {
-    border-left: 1px solid rgb(55, 55, 55);;
+    border-left: 1px solid lightgray;
 }
 
 .days-container li:nth-child(1), .days-container li:nth-child(2), .days-container li:nth-child(3), .days-container li:nth-child(4), .days-container li:nth-child(5), .days-container li:nth-child(6), .days-container li:nth-child(7){
@@ -97,8 +128,12 @@ header button {
 }
 
 .days-container li{
-    border: 1px solid  rgb(197, 197, 197);
+    border-right: 1px solid  lightgray;
+    border-bottom: 1px solid  lightgray;
+    border-left: 1px solid lightgray;
 }
+
+
 
 /* CALENDAR HEADER */
 .header {
@@ -111,15 +146,25 @@ header button {
 
 .header h3 {
     display: flex;
+    margin-right: 20px;
 }
 
-.header button {
+.month-button {
     border: none;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    background-color: white;
+    cursor: pointer;
 }
-
+.month-date{
+    display: flex;
+}
+.add-button{
+    background-color: #0071e3;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+}
 /* New event button in each day */
 .day-container {
     display: flex;
