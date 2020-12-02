@@ -22,6 +22,7 @@ var myEvents = [];
 document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent, true);
 
 function storeEvent () {
+    
     var title = document.getElementById("eventTitle").value;
     var startDate = document.getElementById("date").value;
     var endDate = document.getElementById("endDateCalendar").value;

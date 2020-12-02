@@ -202,13 +202,14 @@ header h2 {
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px 20px;
-    border: 1px grey solid;
+    border: 1px lightgray solid;
     margin: 50px auto;
     z-index: 1;
     position: fixed;
     right: 50%;
     transform: translate(50%);
     background-color: white;/* Black w/ opacity */
+    border-radius: 20px;
   }
 
 .x-btn{
@@ -217,6 +218,7 @@ header h2 {
 }
 .container-modal h2{
     text-align: center;
+    font-weight: 300;
 }
 
 .form{
@@ -236,7 +238,7 @@ fieldset{
     flex-direction: row;
     gap: 10px;
     align-items: center;
-    border-bottom: 2px solid #c5ecfd;
+    border-bottom: 2px solid #0071e3;
     padding: 3px 10px;
 }
 
@@ -244,17 +246,17 @@ fieldset input{
     margin: 10px 0;
     background: transparent;
     border: 0px;
-    border-bottom: 2px solid #c5ecfd;
+    border-bottom: 2px solid #0071e3;
 }
 .form-description{
-    border: 2px solid #c5ecfd;
+    border: 2px solid #0071e3;
     height: 50px;
 }
 .select-form{
     gap: 10px;
 }
 .select-form select {
-    border:2px solid #c5ecfd;
+    border:2px solid #0071e3;
     padding: 5px;
 }
 .botones{
@@ -266,10 +268,10 @@ fieldset input{
 .button-form{
     width: 100px;
     margin-right: 10px;
-    background: #39b7dd;
+    background: #0071e3;
     text-align: center;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 400px;
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
