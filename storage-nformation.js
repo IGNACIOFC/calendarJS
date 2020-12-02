@@ -1,11 +1,11 @@
 
-function newEvent (title, startDate, endDate, remindTime, description, type) {
-    this.title = "";
-    this.startDate = new Date();
-    this.endDate = new Date();
-    this.remindTime = "";
-    this.description = "";
-    this.type = "";
+function newEvent (titleValue, startDateValue, endDateValue, remindTimeValue, descriptionValue, typeValue) {
+    this.title = titleValue;
+    this.startDate = startDateValue;
+    this.endDate = endDateValue;
+    this.remindTime = remindTimeValue;
+    this.description = descriptionValue;
+    this.type = typeValue;
 }
 
 /* let newEvent = {
@@ -19,9 +19,11 @@ function newEvent (title, startDate, endDate, remindTime, description, type) {
 
 var myEvents = [];
 
-document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent, true);
+document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent);
 
-function storeEvent () {
+function storeEvent (event) {
+    event.preventDefault();
+
     var title = document.getElementById("eventTitle").value;
     var startDate = document.getElementById("date").value;
     var endDate = document.getElementById("endDateCalendar").value;
