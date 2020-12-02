@@ -1,3 +1,6 @@
+const addEventButton = document.getElementById("createNewEventModalButton");
+const createButton = document.getElementById("createNewEventModalButton");
+
 
 function newEvent (titleValue, startDateValue, endDateValue, remindTimeValue, descriptionValue, typeValue) {
     this.title = titleValue;
@@ -19,13 +22,11 @@ function newEvent (titleValue, startDateValue, endDateValue, remindTimeValue, de
 
 var myEvents = [];
 
-document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent);
+createButton.addEventListener("click", storeEvent);
+
 
 function storeEvent (event) {
     event.preventDefault();
-
-function storeEvent () {
-    
     var title = document.getElementById("eventTitle").value;
     var startDate = document.getElementById("date").value;
     var endDate = document.getElementById("endDateCalendar").value;
@@ -51,12 +52,14 @@ function storeEvent () {
     /* alert(myeventinformation); */
     JSON.parse(myeventinformation);
     
-    alert(myeventinformation[0].title.innerHTML);
 
     /* alert(newEvent.title);
     alert(newEvent.startDate);
     alert(newEvent.endDate);
     alert(newEvent.remindTime); */
+    document.getElementById("bgModal").style.display = "none";
 }
+
+
 
 

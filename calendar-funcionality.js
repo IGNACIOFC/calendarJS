@@ -1,4 +1,5 @@
 /* CALENDAR NAVEGATION */
+const date = document.getElementById("date");
 const previusButton = document.querySelector(".previus-button");
 const nextButton = document.querySelector(".next-button");
 
@@ -34,6 +35,7 @@ function displayMonths (e) {
                         break;
                     }
                 }
+
         }
     } else if (e.target.className.includes("left")) {
         switch (actualMonth) {
@@ -109,11 +111,12 @@ function displayNewEventButton (e) {
         buttonElement.appendChild(buttonText);
         var newEventButton = e.target.appendChild(buttonElement);
         newEventButton.classList.add("new-event-day");
-        document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";});
+        document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";date.value = `${actualYear}-${actualMonthNumber}-26T15:37`;});
     }
-
 }
 function removeNewEventButton (e) {
     e.target.addEventListener("mouseover", displayNewEventButton);
     e.target.lastChild.remove();
 }
+
+/* CREATE NEW MODAL WINDOW */

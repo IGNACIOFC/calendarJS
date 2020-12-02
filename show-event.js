@@ -16,3 +16,4 @@ function createEventContainer (dia) {
     element.appendChild(text);
     
 }
+
