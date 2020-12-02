@@ -8,7 +8,7 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-            }
+}
 
 .container{
     max-width: 1200px;
@@ -170,7 +170,7 @@ header h2 {
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
+    transition: 0.4s;
     background-size: 200% auto;
     color: white;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
@@ -288,8 +288,7 @@ fieldset input{
 .button-form{
     width: 100px;
     margin-right: 10px;
-    background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: linear-gradient(to right, #B721FF 0%, #66c0ea 51%, #B721FF 100%);    
     text-align: center;
     padding: 10px;
     border-radius: 400px;
@@ -297,6 +296,13 @@ fieldset input{
     cursor: pointer;
     text-transform: uppercase;
     border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-size: 200% auto;
+
+}
+.button-form:hover{
+    background-position: right center;
 }
 .button-form:last-child{
     margin-right: 0;
