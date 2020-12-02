@@ -162,12 +162,17 @@ header h2 {
     display: flex;
 }
 .add-button{
-    background-color: #0071e3;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     border-radius: 30px;
     color: white;
     border: none;
     padding: 5px 15px;
     cursor: pointer;
+}
+.add-button:hover{
+    font-weight: 700;
+    padding: 7px 19px;
 }
 /* New event button in each day */
 .day-container {
