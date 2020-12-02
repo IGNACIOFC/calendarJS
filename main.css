@@ -164,6 +164,7 @@ header h2 {
     color: white;
     border: none;
     padding: 5px 15px;
+    cursor: pointer;
 }
 /* New event button in each day */
 .day-container {
@@ -173,7 +174,7 @@ header h2 {
     position: relative;
 }
 .new-event-day {
-    font-size: 7px;
+    font-size: 10px;
     text-align: center;
     padding: 1px;
     position: absolute;
@@ -181,6 +182,13 @@ header h2 {
     right: 50%;
     transform: translate(50%);
     width: 50%;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .new-event-day-hidden {
