@@ -9,7 +9,10 @@ body{
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
-
+.currentDay{
+    background-color: lightgray;
+    color: white;
+}
 .container{
     max-width: 1200px;
     margin: 50px auto 0 auto;
@@ -322,6 +325,12 @@ fieldset input{
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  /* EVENT MODAL */
+
+  .eventModal{
+      display: none;
   }
 
 /* Calendar events */

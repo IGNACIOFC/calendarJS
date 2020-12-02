@@ -132,12 +132,14 @@ function displayNewEventButton (e) {
         buttonElement.appendChild(buttonText);
         var newEventButton = e.target.appendChild(buttonElement);
         newEventButton.classList.add("new-event-day");
-        document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";date.value = `${actualYear}-${actualMonthNumber}-26T15:37`;});
+        document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";});
     }
 }
 function removeNewEventButton (e) {
     e.target.addEventListener("mouseover", displayNewEventButton);
     e.target.lastChild.remove();
 }
+
+/* MARK THE ACTUAL DATE */
 
 /* CREATE NEW MODAL WINDOW */
