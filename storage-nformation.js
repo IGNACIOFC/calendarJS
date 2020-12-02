@@ -1,3 +1,6 @@
+const addEventButton = document.getElementById("createNewEventModalButton");
+const createButton = document.getElementById("createNewEventModalButton");
+
 
 /* function newEvent (titleValue, startDateValue, endDateValue, remindTimeValue, descriptionValue, typeValue) {
     this.title = titleValue;
@@ -49,5 +52,7 @@ function storeEvent (event) {
         localStorage.setItem("myEvents", JSON.stringify(myEvents));
     }
 }
+
+
 
 
