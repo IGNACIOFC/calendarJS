@@ -21,6 +21,7 @@ function storeEvent (event) {
         description : "",
         type : "",
     }
+    
     newEvent.title = document.getElementById("eventTitle").value;
     newEvent.startDate = document.getElementById("date").value;
     newEvent.endDate = document.getElementById("endDateCalendar").value;
