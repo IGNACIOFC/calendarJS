@@ -17,22 +17,15 @@ function showEventsInCalendar (month, year) {
         if (nMonth === month) {
             monthDaysArray.forEach(element => {
                 if (element.innerHTML == nDay) {
-                    createEventContainer(element);
+                    const p = document.createElement("p");
+                    let text = document.createTextNode(allMyEvents[index].title);
+                    p.appendChild(text);
+                    p.classList.add("calendar-event")
+                    element.appendChild(p);
                 }
             });
         }
-        /* recorre mi array de objetos y mirar la propiedad start day */
-        /* si el mes y el año de la propiedad startdate coincide con los pasados a la funcion (los del mes y año actuales mostrados) */
-        /* llamo a la funcion createEventContainer, pasandole el dia de startday */
     }
 }
 
-function createEventContainer (dia) {
-    /* recorro todos los dias del mes y cuando coincida con el dia del evento creo un elemento y se lo añado */
-    const p = document.createElement("p");
-    let text = document.createTextNode("evento1")
-    p.appendChild(text);
-    dia.appendChild(p);
-    
-}
 

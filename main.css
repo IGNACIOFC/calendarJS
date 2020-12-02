@@ -333,3 +333,8 @@ fieldset input{
       display: none;
   }
 
+/* Calendar events */
+
+.calendar-event {
+    background-color: aquamarine;
+}
