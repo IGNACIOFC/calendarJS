@@ -5,15 +5,25 @@ const nextButton = document.querySelector(".next-button");
 
 const monthArray = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
 
-previusButton.addEventListener("click", displayMonths);
-nextButton.addEventListener("click", displayMonths);
+var currentDate = new Date();
+    var ncurrentMonth = currentDate.getMonth();
+    var currentYear = currentDate.getFullYear();
+    var currentDay = currentDate.getDate();
+
+    currentMonth = monthArray[ncurrentMonth];
+
+    document.querySelector(".month").innerHTML = currentMonth;
+    document.querySelector(".year").innerHTML = currentYear;
 
 var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
 
 let monthDaysArray = document.querySelectorAll(".days-container li");
 
-displayCurrentMonth ();
+previusButton.addEventListener("click", displayMonths);
+nextButton.addEventListener("click", displayMonths);
+
+getWeekDay ();
 
 function displayMonths (e) {
     
@@ -72,14 +82,10 @@ function getWeekDay () {
             break;
         };
     }
-    console.log(actualYear);
-    console.log(actualMonthNumber);
     var firstDay = new Date (actualYear, actualMonthNumber - 1, 1);
-    console.log(firstDay.getDay());
     firstDayNumber = firstDay.getDay();
 
     var numberOfDays;
-
     if (actualMonthNumber === 1 || actualMonthNumber === 3 || actualMonthNumber === 5 || actualMonthNumber === 7 || actualMonthNumber === 8 || actualMonthNumber === 10 || actualMonthNumber === 12) {
         numberOfDays = 31;
     } else if (actualMonthNumber === 4 || actualMonthNumber === 6 || actualMonthNumber === 9 || actualMonthNumber === 11) {
@@ -90,7 +96,7 @@ function getWeekDay () {
     monthDaysArray.forEach(element => {
         element.innerHTML = "";
     });
-    console.log(numberOfDays);
+
     for (let index = 1; index <= numberOfDays; index++) {
         if (firstDayNumber===0) {
             firstDayNumber = 7;
@@ -99,6 +105,14 @@ function getWeekDay () {
         firstDayNumber ++;
     }
     monthDaysArray.forEach(element => {
+        if (element.innerHTML == currentDay && actualMonth == currentMonth && actualYear == currentYear) {
+        element.classList.add("currentDay");
+        } else {
+            element.classList.remove("currentDay");
+        }
+});
+    
+    monthDaysArray.forEach(element => {
         element.addEventListener("mouseover", displayNewEventButton);
         element.addEventListener("mouseleave", removeNewEventButton);
     });
@@ -106,21 +120,16 @@ function getWeekDay () {
     showEventsInCalendar (actualMonthNumber - 1, actualYear);
 }
 
-function displayCurrentMonth () {
-    var currentDate = new Date();
-    var ncurrentMonth = currentDate.getMonth();
-    var currentYear = currentDate.getFullYear();
+/* function displayCurrentMonth () {
 
-    currentMonth = monthArray[ncurrentMonth];
 
-    document.querySelector(".month").innerHTML = currentMonth;
-    document.querySelector(".year").innerHTML = currentYear;
+    
 
     actualYear = currentYear;
     actualMonth = currentMonth;
 
     getWeekDay ();
-}
+} */
 
 /* DISPLAY NEW EVENT BUTTON */
 
