@@ -17,11 +17,12 @@ function showEventsInCalendar (month, year) {
         if (nMonth === month) {
             monthDaysArray.forEach(element => {
                 if (element.innerHTML == nDay) {
-                    const p = document.createElement("p");
+                    let p = document.createElement("p");
                     let text = document.createTextNode(allMyEvents[index].title);
                     p.appendChild(text);
-                    p.classList.add("calendar-event")
+                    p.classList.add("calendar-event");
                     element.appendChild(p);
+                    console.log("Eventos en un dia" + element.childNodes.length);
                 }
             });
         }
