@@ -9,7 +9,7 @@ let newEvent = {
 
 var myEvents = [];
 
-document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent);
+document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent, true);
 
 function storeEvent () {
     newEvent.title = document.getElementById("eventTitle").value;
@@ -36,14 +36,3 @@ function storeEvent () {
     alert(newEvent.remindTime); */
 }
 
-function showEventsInCalendar () {
-    JSON.parse(myeventinformation);
-    alert(myeventinformation[0].title);
-}
-
-function createEventContainer () {
-    const element = document.createElement("p");
-    let text = document.createTextNode("evento1")
-    element.appendChild(text)
-    
-}
