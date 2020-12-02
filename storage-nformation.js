@@ -8,12 +8,11 @@ function newEvent (titleValue, startDateValue, endDateValue, remindTimeValue, de
     this.type = typeValue;
 }
 
-var myEvents = [];
-
 document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent);
 
 function storeEvent (event) {
     event.preventDefault();
+    var myEvents = [];
 
     var title = document.getElementById("eventTitle").value;
     var startDate = document.getElementById("date").value;
@@ -23,15 +22,15 @@ function storeEvent (event) {
     var type = document.getElementById("eventType").value;
 
     var myNewEvent = new newEvent(title, startDate, endDate, remindTime, description, type);
-
-    myEvents.push(myNewEvent);
-
-    localStorage.setItem("myEvents", JSON.stringify(myEvents));
-
-    let myeventinformation = localStorage.getItem("myEvents");
-    allMyEvents = JSON.parse(myeventinformation);
-    
-    
+    console.log(localStorage.getItem("myEvents"))
+    if (localStorage.getItem("myEvents") != null) {
+        myEvents = JSON.parse(localStorage.getItem("myEvents"));
+        myEvents.push(myNewEvent);
+        localStorage.setItem("myEvents", JSON.stringify(myEvents));
+    } else {
+        myEvents.push(myNewEvent);
+        localStorage.setItem("myEvents", JSON.stringify(myEvents));
+    }
 }
 
 
