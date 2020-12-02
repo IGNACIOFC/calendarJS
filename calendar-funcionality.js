@@ -20,6 +20,18 @@ var actualYear = document.querySelector(".year").innerHTML;
 
 let monthDaysArray = document.querySelectorAll(".days-container li");
 
+var actualMonthNumber = getmonthNumber ();
+
+function getmonthNumber () {
+    for (let index = 0; index < monthArray.length; index++) {
+        if (monthArray[index]===actualMonth) {
+            actualMonthN = index + 1;
+            return actualMonthN;
+        };
+    }
+}
+
+console.log(actualMonthNumber)
 previusButton.addEventListener("click", displayMonths);
 nextButton.addEventListener("click", displayMonths);
 
@@ -75,13 +87,11 @@ function displayMonths (e) {
 }
 
 function getWeekDay () {
-    var actualMonthNumber;
-    for (let index = 0; index < monthArray.length; index++) {
-        if (monthArray[index]===actualMonth) {
-            actualMonthNumber = index + 1;
-            break;
-        };
-    }
+    actualMonth = document.querySelector(".month").innerHTML;
+    actualYear = document.querySelector(".year").innerHTML;
+    actualMonthNumber = getmonthNumber ();
+
+
     var firstDay = new Date (actualYear, actualMonthNumber - 1, 1);
     firstDayNumber = firstDay.getDay();
 

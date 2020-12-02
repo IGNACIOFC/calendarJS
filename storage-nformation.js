@@ -41,7 +41,7 @@ function storeEvent (event) {
     var type = document.getElementById("eventType").value;
 
     var myNewEvent = new newEvent(title, startDate, endDate, remindTime, description, type); */
-    console.log(localStorage.getItem("myEvents"))
+    
     if (localStorage.getItem("myEvents") != null) {
         myEvents = JSON.parse(localStorage.getItem("myEvents"));
         myEvents.push(newEvent);

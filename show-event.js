@@ -32,13 +32,25 @@ function showEventsInCalendar (month, year) {
     myevents.forEach(element => {   
     element.addEventListener("click", function (e) {
         index = e.target.getAttribute("id");
-        console.log("element id " + index);
         document.getElementById("eventModal").style.display = "block";
         document.getElementById("eventtitle").innerHTML = allMyEvents[index].title;
         document.getElementById("eventEndDate").innerHTML = allMyEvents[index].endDate;
         document.getElementById("eventDescription").innerHTML = allMyEvents[index].description;
+
+        document.getElementById("DeleteEvent").addEventListener("click", removeEventFromMyMemory(index, allMyEvents));
     })
 });
 }
 
 
+/* DELETE EVENT */
+function removeEventFromMyMemory (idevent, allMyEvents) {
+    console.log("remove" + idevent);
+    console.log(allMyEvents)
+    /* allMyEvents.splice(idevent);
+
+    localStorage.setItem("myEvents", JSON.stringify(allMyEvents));
+
+    showEventsInCalendar(actualMonthNumber, actualYear);
+    document.getElementById("eventModal").style.display = "none"; */
+}
