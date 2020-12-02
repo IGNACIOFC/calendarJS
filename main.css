@@ -318,23 +318,36 @@ fieldset input{
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
   /* EVENT MODAL */
 
-  .eventModal{
-      display: none;
-  }
+.eventModal{
+    display: none;
+}
+.closeEvent{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeEvent:hover, .closeEvent:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* Calendar events */
 
 .calendar-event {
     background-color: aquamarine;
+    cursor: pointer;
 }

@@ -6,6 +6,7 @@ var cancelBtn = document.getElementById("cancelBtn");
 
 var eventModal = document.getElementById("eventModal");
 var eventP = document.getElementById("eventP");
+var closeEventButton = document.getElementsByClassName("closeEvent");
 
 modalBtn.addEventListener("click", function() {
     modal.style.display = "block";
@@ -27,10 +28,15 @@ cancelBtn.addEventListener("click", function(){
 
 
 /* EVENT MODAL */
+/*
 eventP.addEventListener("click", function(){
     eventModal.style.display = "block";
 })
+*/
 
+closeEventButton[0].addEventListener("click", function(){
+    eventModal.style.display = "none";
+});
 /* FORM VALIDATIONS */
 const title = document.getElementById("eventTitle");
 const description = document.getElementById("description");

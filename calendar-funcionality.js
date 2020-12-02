@@ -143,10 +143,12 @@ function displayNewEventButton (e) {
         document.querySelector(".new-event-day").addEventListener("click",function () {modal.style.display = "block";});
     }
 }
+
 function removeNewEventButton (e) {
     e.target.addEventListener("mouseover", displayNewEventButton);
     e.target.lastChild.remove();
 }
+
 
 /* MARK THE ACTUAL DATE */
 
