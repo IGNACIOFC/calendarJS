@@ -324,3 +324,8 @@ fieldset input{
     cursor: pointer;
   }
 
+/* Calendar events */
+
+.calendar-event {
+    background-color: aquamarine;
+}
