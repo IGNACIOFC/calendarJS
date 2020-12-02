@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -72,76 +71,83 @@
         </main>
     </section>
     
-    <header>
+    <header class="container">
         <h2>Calendar JS</h2>
-        <button id="button-create-new-event">Add event</button>
     </header>
-    <section class="main-content">
-        <section class="header">
-            <button class="previus-button"><i class="fa fa-angle-left"></i></button>
-            <h3>
-            <p class="month" id="currentMonth">January</p>
-            <p>/</p>
-            <p class="year"  id="currentYear">2020</p>
-            </h3>
-            <button class="next-button"><i class="fa fa-angle-right"></i></button>
-        </section>
-        <section class="flex-container-month-layout">
-            <ul class="weekday-names">
-                <li>Monday</li>
-                <li>Tuesday</li>
-                <li>Wednesday</li>
-                <li>Thursday</li>
-                <li>Friday</li>
-                <li>Saturday</li>
-                <li>Sunday</li>
-            </ul>
-            <ul class="days-container">
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
-                <li class="day-container"></li>
+    <div class="container-calendar">
+        <section class="main-content">
+            <section class="header">
+                <div class="month-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>
+                        <p class="month" id="currentMonth">January</p>
+                        <p>/</p>
+                        <p class="year"  id="currentYear">2020</p>
+                    </h3>
+                    <button class="previus-button month-button"><i class="fa fa-angle-left"></i></button>
+                    <button class="next-button month-button"><i class="fa fa-angle-right"></i></button>
+                </div>
+                <button id="button-create-new-event" class="add-button">Add event</button>
+
+            </section>
+
+            <section class="flex-container-month-layout">
+                <ul class="weekday-names">
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                    <li>Saturday</li>
+                    <li>Sunday</li>
                 </ul>
+                <ul class="days-container">
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    <li class="day-container"></li>
+                    </ul>
+            </section>
         </section>
-    </section>
+    </div>
 
     
     <script src="calendar-funcionality.js"></script>
