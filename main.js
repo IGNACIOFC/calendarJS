@@ -4,6 +4,9 @@ var modalBtn = document.getElementById("button-create-new-event");
 var spanClose = document.getElementsByClassName("close");
 var cancelBtn = document.getElementById("cancelBtn");
 
+var eventModal = document.getElementById("eventModal");
+var eventP = document.getElementById("eventP");
+
 modalBtn.addEventListener("click", function() {
     modal.style.display = "block";
 });
@@ -20,6 +23,13 @@ window.onclick = function(event) {
 cancelBtn.addEventListener("click", function(){
     modal.style.display = "none";
 });
+
+
+/* EVENT MODAL */
+eventP.addEventListener("click", function(){
+    eventModal.style.display = "block";
+})
+
 /* FORM VALIDATIONS */
 const title = document.getElementById("eventTitle");
 const description = document.getElementById("description");
