@@ -11,8 +11,6 @@ nextButton.addEventListener("click", displayMonths);
 var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
 
-
-
 let monthDaysArray = document.querySelectorAll(".days-container li");
 
 displayCurrentMonth ();
@@ -100,6 +98,10 @@ function getWeekDay () {
         monthDaysArray[(firstDayNumber-1)].innerHTML = index;
         firstDayNumber ++;
     }
+    monthDaysArray.forEach(element => {
+        element.addEventListener("mouseover", displayNewEventButton);
+        element.addEventListener("mouseleave", removeNewEventButton);
+    });
 
     showEventsInCalendar (actualMonthNumber - 1, actualYear);
 }
@@ -121,10 +123,7 @@ function displayCurrentMonth () {
 }
 
 /* DISPLAY NEW EVENT BUTTON */
-monthDaysArray.forEach(element => {
-    element.addEventListener("mouseover", displayNewEventButton);
-    element.addEventListener("mouseleave", removeNewEventButton);
-});
+
 function displayNewEventButton (e) {
     if (e.target.innerHTML!="") {
         e.target.removeEventListener("mouseover", displayNewEventButton);
