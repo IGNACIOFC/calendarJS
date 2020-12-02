@@ -7,14 +7,18 @@ const monthArray = ["January", "February", "March", "April", "May", "Jun", "July
 
 previusButton.addEventListener("click", displayMonths);
 nextButton.addEventListener("click", displayMonths);
+
 var actualMonth = document.querySelector(".month").innerHTML;
 var actualYear = document.querySelector(".year").innerHTML;
 
+
+
 let monthDaysArray = document.querySelectorAll(".days-container li");
 
-getWeekDay ();
+displayCurrentMonth ();
 
 function displayMonths (e) {
+    
     if(e.target.className.includes("right")){
         switch (actualMonth) {
             case "December":
@@ -96,6 +100,24 @@ function getWeekDay () {
         monthDaysArray[(firstDayNumber-1)].innerHTML = index;
         firstDayNumber ++;
     }
+
+    showEventsInCalendar (actualMonthNumber - 1, actualYear);
+}
+
+function displayCurrentMonth () {
+    var currentDate = new Date();
+    var ncurrentMonth = currentDate.getMonth();
+    var currentYear = currentDate.getFullYear();
+
+    currentMonth = monthArray[ncurrentMonth];
+
+    document.querySelector(".month").innerHTML = currentMonth;
+    document.querySelector(".year").innerHTML = currentYear;
+
+    actualYear = currentYear;
+    actualMonth = currentMonth;
+
+    getWeekDay ();
 }
 
 /* DISPLAY NEW EVENT BUTTON */

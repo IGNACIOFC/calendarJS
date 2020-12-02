@@ -1,19 +1,38 @@
+function getStoreInformation () {
+    let myeventinformation = JSON.parse(localStorage.getItem("myEvents"));
+    return myeventinformation;
+}
+
 function showEventsInCalendar (month, year) {
-    for (let index = 0; index < myeventinformation.length; index++) {
+    console.log("the month is " + month);
+    let allMyEvents = [];
+    allMyEvents = getStoreInformation();
+
+    for (let index = 0; index < allMyEvents.length; index++) {
+        d = new Date (allMyEvents[index].startDate);
+        var nMonth = d.getMonth();
+        var nDay = d.getDate ();
+        console.log(nDay);
+        console.log(nMonth);
+        if (nMonth === month) {
+            monthDaysArray.forEach(element => {
+                if (element.innerHTML == nDay) {
+                    createEventContainer(element);
+                }
+            });
+        }
         /* recorre mi array de objetos y mirar la propiedad start day */
-        myeventinformation[index].startDate.getMonth ()
         /* si el mes y el año de la propiedad startdate coincide con los pasados a la funcion (los del mes y año actuales mostrados) */
         /* llamo a la funcion createEventContainer, pasandole el dia de startday */
     }
-    JSON.parse(myeventinformation);
-    alert(myeventinformation[0].title);
 }
 
 function createEventContainer (dia) {
     /* recorro todos los dias del mes y cuando coincida con el dia del evento creo un elemento y se lo añado */
-    const element = document.createElement("p");
+    const p = document.createElement("p");
     let text = document.createTextNode("evento1")
-    element.appendChild(text);
+    p.appendChild(text);
+    dia.appendChild(p);
     
 }
 
