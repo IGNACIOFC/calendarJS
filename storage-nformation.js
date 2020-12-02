@@ -55,15 +55,4 @@ function storeEvent () {
     alert(newEvent.remindTime); */
 }
 
-function createEventContainer () {
-    const element = document.createElement("p");
-    let text = document.createTextNode("evento1")
-    element.appendChild(text);
-    
-}
-
-function showEventsInCalendar () {
-    JSON.parse(myeventinformation);
-    alert(myeventinformation[0].title);
-}
 
