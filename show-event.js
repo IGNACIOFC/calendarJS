@@ -20,6 +20,7 @@ function showEventsInCalendar (month, year) {
                     const p = document.createElement("p");
                     let text = document.createTextNode(allMyEvents[index].title);
                     p.appendChild(text);
+                    p.classList.add("calendar-event")
                     element.appendChild(p);
                 }
             });

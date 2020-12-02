@@ -13,6 +13,7 @@ const createButton = document.getElementById("createNewEventModalButton");
 
 document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent);
 
+
 function storeEvent (event) {
     event.preventDefault();
     var myEvents = [];
@@ -51,7 +52,12 @@ function storeEvent (event) {
         /* myEvents.push(myNewEvent); */
         localStorage.setItem("myEvents", JSON.stringify(myEvents));
     }
+    modal.style.display = "none";
+    d = new Date (newEvent.startDate);
+    var nMonth = d.getMonth();
+    showEventsInCalendar(nMonth);
 }
+
 
 
 
