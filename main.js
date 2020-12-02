@@ -9,6 +9,7 @@ var eventP = document.getElementById("eventP");
 
 modalBtn.addEventListener("click", function() {
     modal.style.display = "block";
+    document.getElementById("date").value = Date;
 });
 spanClose[0].addEventListener("click", function() {
     modal.style.display = "none";
