@@ -22,14 +22,21 @@ var myEvents = [];
 document.getElementById("createNewEventModalButton").addEventListener("click", storeEvent, true);
 
 function storeEvent () {
-    var myNewEvent = new newEvent();
+    var title = document.getElementById("eventTitle").value;
+    var startDate = document.getElementById("date").value;
+    var endDate = document.getElementById("endDateCalendar").value;
+    var remindTime = document.getElementById("time").value;
+    var description = document.getElementById("description").value;
+    var type = document.getElementById("eventType").value;
 
-    myNewEvent.title = document.getElementById("eventTitle").value;
+    var myNewEvent = new newEvent(title, startDate, endDate, remindTime, description, type);
+
+    /* myNewEvent.title = document.getElementById("eventTitle").value;
     myNewEvent.startDate = document.getElementById("date").value;
     myNewEvent.endDate = document.getElementById("endDateCalendar").value;
     myNewEvent.remindTime = document.getElementById("time").value;
     myNewEvent.description = document.getElementById("description").value;
-    myNewEvent.type = document.getElementById("eventType").value;
+    myNewEvent.type = document.getElementById("eventType").value; */
 
     myEvents.push(myNewEvent);
 
