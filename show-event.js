@@ -30,11 +30,13 @@ function showEventsInCalendar (month, year) {
     }
     myevents = document.querySelectorAll(".calendar-event");
     myevents.forEach(element => {   
-    element.addEventListener("click", function () {
-        index = element.getAtribute("id");
-        document.getElementById("myEventodal").style.display = "block";
-        document.getElementById("eventtitle").innerHTML = allMyEvents[index].title
-
+    element.addEventListener("click", function (e) {
+        index = e.target.getAttribute("id");
+        console.log("element id " + index);
+        document.getElementById("eventModal").style.display = "block";
+        document.getElementById("eventtitle").innerHTML = allMyEvents[index].title;
+        document.getElementById("eventEndDate").innerHTML = allMyEvents[index].endDate;
+        document.getElementById("eventDescription").innerHTML = allMyEvents[index].description;
     })
 });
 }
