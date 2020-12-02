@@ -6,7 +6,8 @@ html, body {
 }
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #DCE3F1;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 
 .container{
@@ -22,7 +23,9 @@ body{
 .container-calendar{
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #F8F8F8;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+        ;
     padding: 10px 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -159,11 +162,22 @@ header h2 {
     display: flex;
 }
 .add-button{
-    background-color: #0071e3;
+    background-image: linear-gradient(to right, #B721FF 0%, #66c0ea 51%, #B721FF 100%);    
     border-radius: 30px;
     color: white;
     border: none;
     padding: 5px 15px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.4s;
+    background-size: 200% auto;
+    color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+}
+.add-button:hover{
+    background-position: right center;
 }
 /* New event button in each day */
 .day-container {
@@ -173,14 +187,20 @@ header h2 {
     position: relative;
 }
 .new-event-day {
-    font-size: 7px;
+    font-size: 10px;
     text-align: center;
-    padding: 1px;
     position: absolute;
     bottom: 0;
     right: 50%;
     transform: translate(50%);
     width: 50%;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .new-event-day-hidden {
@@ -202,13 +222,14 @@ header h2 {
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px 20px;
-    border: 1px grey solid;
+    border: 1px lightgray solid;
     margin: 50px auto;
     z-index: 1;
     position: fixed;
     right: 50%;
     transform: translate(50%);
     background-color: white;/* Black w/ opacity */
+    border-radius: 20px;
   }
 
 .x-btn{
@@ -217,6 +238,7 @@ header h2 {
 }
 .container-modal h2{
     text-align: center;
+    font-weight: 300;
 }
 
 .form{
@@ -236,7 +258,7 @@ fieldset{
     flex-direction: row;
     gap: 10px;
     align-items: center;
-    border-bottom: 2px solid #c5ecfd;
+    border-bottom: 2px solid #FFDEE9;
     padding: 3px 10px;
 }
 
@@ -244,17 +266,17 @@ fieldset input{
     margin: 10px 0;
     background: transparent;
     border: 0px;
-    border-bottom: 2px solid #c5ecfd;
+    border-bottom: 2px solid #FFDEE9;
 }
 .form-description{
-    border: 2px solid #c5ecfd;
+    border: 2px solid #FFDEE9;
     height: 50px;
 }
 .select-form{
     gap: 10px;
 }
 .select-form select {
-    border:2px solid #c5ecfd;
+    border:2px solid #FFDEE9;
     padding: 5px;
 }
 .botones{
@@ -266,14 +288,21 @@ fieldset input{
 .button-form{
     width: 100px;
     margin-right: 10px;
-    background: #39b7dd;
+    background-image: linear-gradient(to right, #B721FF 0%, #66c0ea 51%, #B721FF 100%);    
     text-align: center;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 400px;
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
     border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-size: 200% auto;
+
+}
+.button-form:hover{
+    background-position: right center;
 }
 .button-form:last-child{
     margin-right: 0;
