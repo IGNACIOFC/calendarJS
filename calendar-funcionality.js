@@ -120,17 +120,6 @@ function getWeekDay () {
     showEventsInCalendar (actualMonthNumber - 1, actualYear);
 }
 
-/* function displayCurrentMonth () {
-
-
-    
-
-    actualYear = currentYear;
-    actualMonth = currentMonth;
-
-    getWeekDay ();
-} */
-
 /* DISPLAY NEW EVENT BUTTON */
 
 function displayNewEventButton (e) {
