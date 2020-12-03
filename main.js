@@ -85,3 +85,36 @@ remainder.addEventListener("click", function(){
     }
 })
 
+/* NIGHT MODE */
+
+var nightModeInput = document.getElementById("nightModeInput");
+var mainContent = document.getElementById("mainContent");
+var body = document.getElementsByTagName("body");
+var container = document.getElementById("container");
+var containerCalendar = document.getElementById("containerCalendar");
+
+
+nightModeInput.addEventListener("click", function(){
+    if(nightModeInput.checked == true) {
+        mainContent.style.backgroundColor = "#212B41";
+        mainContent.style.color = "white";
+        container.style.backgroundColor = "#212B41";
+        container.style.color = "white"
+        containerCalendar.style.backgroundColor = "#FF3CAC";
+        containerCalendar.style.backgroundImage = "linear-gradient(225deg, #FF6A88 0%, #784BA0 50%, #2B86C5 100%)";
+        document.getElementById("button-create-new-event").style.backgroundImage = "linear-gradient(to right, #B721FF 0%, #66c0ea 51%, #B721FF 100%)";
+        document.getElementById("myModal").style.backgroundColor = "#212B41";
+        document.getElementById("myModal").style.color = "white";
+
+    } else {
+        mainContent.style.backgroundColor = "white";
+        mainContent.style.color = "black";
+        container.style.backgroundColor = "white";
+        container.style.color = "black"
+        containerCalendar.style.backgroundColor = "#FFDEE9";
+        containerCalendar.style.backgroundImage = "linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)";
+        document.getElementById("myModal").style.backgroundColor = "white";
+        document.getElementById("myModal").style.color = "black";
+    }
+})
+
