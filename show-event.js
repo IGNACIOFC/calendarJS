@@ -34,19 +34,17 @@ function showEventsInCalendar (month, year) {
         index = e.target.getAttribute("id");
         document.getElementById("eventModal").style.display = "block";
         document.getElementById("eventtitle").innerHTML = allMyEvents[index].title;
-        document.getElementById("eventStartDate").innerHTML += allMyEvents[index].startDate;
+        document.getElementById("eventStartDate").innerHTML =  "Start date: " + allMyEvents[index].startDate;
         if (allMyEvents[index].endDate != "") {
-            document.getElementById("eventEndDate").innerHTML += allMyEvents[index].endDate;
+            document.getElementById("eventEndDate").innerHTML = "End date: " + allMyEvents[index].endDate;
         } else {
             document.getElementById("eventEndDate").style.display = "none"
         }
         if (allMyEvents[index].description != "") {
-            document.getElementById("eventDescription").innerHTML += allMyEvents[index].description;
+            document.getElementById("eventDescription").innerHTML = "Description: " + allMyEvents[index].description;
         } else {
             document.getElementById("eventDescription").style.display = "none"
         }
-        
-
         document.querySelector(".DeleteEvent").setAttribute("id", index)
         document.getElementById(index).addEventListener("click", removeEventFromMyMemory);
     })
