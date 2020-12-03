@@ -382,3 +382,6 @@ fieldset input{
 #endDateCalendar {
     display: none;
 }
+#timeSelect {
+    display: none;
+}

@@ -61,12 +61,14 @@ form.addEventListener("submit", (e) => {
 
 /* CHECKBOX */
 
-var checkbox = document.getElementById("endDateCheck");
+var checkboxDate = document.getElementById("endDateCheck");
 var endDate = document.getElementById("endDateCalendar");
 var endDateLabel = document.getElementById("endDateLabel");
+var timeSelect = document.getElementById("timeSelect");
+var remainder = document.getElementById("remainder");
 
-checkbox.addEventListener("click", function(){
-    if (checkbox.checked == true) {
+checkboxDate.addEventListener("click", function(){
+    if (checkboxDate.checked == true) {
         endDate.style.display = "block";
         endDateLabel.style.display ="block";
     } else {
@@ -75,4 +77,11 @@ checkbox.addEventListener("click", function(){
     }
 })
 
+remainder.addEventListener("click", function(){
+    if (remainder.checked == true) {
+        timeSelect.style.display = "block";
+    } else {
+        timeSelect.style.display = "none";
+    }
+})
 
