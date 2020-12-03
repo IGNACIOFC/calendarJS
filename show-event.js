@@ -34,23 +34,38 @@ function showEventsInCalendar (month, year) {
         index = e.target.getAttribute("id");
         document.getElementById("eventModal").style.display = "block";
         document.getElementById("eventtitle").innerHTML = allMyEvents[index].title;
-        document.getElementById("eventEndDate").innerHTML = allMyEvents[index].endDate;
-        document.getElementById("eventDescription").innerHTML = allMyEvents[index].description;
+        document.getElementById("eventStartDate").innerHTML += allMyEvents[index].startDate;
+        if (allMyEvents[index].endDate != "") {
+            document.getElementById("eventEndDate").innerHTML += allMyEvents[index].endDate;
+        } else {
+            document.getElementById("eventEndDate").style.display = "none"
+        }
+        if (allMyEvents[index].description != "") {
+            document.getElementById("eventDescription").innerHTML += allMyEvents[index].description;
+        } else {
+            document.getElementById("eventDescription").style.display = "none"
+        }
+        
 
-        document.getElementById("DeleteEvent").addEventListener("click", removeEventFromMyMemory(index, allMyEvents));
+        document.querySelector(".DeleteEvent").setAttribute("id", index)
+        document.getElementById(index).addEventListener("click", removeEventFromMyMemory);
     })
 });
 }
 
 
 /* DELETE EVENT */
-function removeEventFromMyMemory (idevent, allMyEvents) {
-    console.log("remove" + idevent);
-    console.log(allMyEvents)
-    /* allMyEvents.splice(idevent);
+function removeEventFromMyMemory (e) {
+    index = e.target.getAttribute("id");
+    e.target.removeAttribute("id");
+    console.log("remove" + index);
 
+    let allMyEvents = [];
+    allMyEvents = getStoreInformation();
+    console.log("Eventos number " + allMyEvents.length);
+    allMyEvents.splice(index, 1);
+    console.log("Eventos number " + allMyEvents.length);
     localStorage.setItem("myEvents", JSON.stringify(allMyEvents));
-
+    document.getElementById("eventModal").style.display = "none";
     showEventsInCalendar(actualMonthNumber, actualYear);
-    document.getElementById("eventModal").style.display = "none"; */
 }
