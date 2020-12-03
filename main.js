@@ -58,3 +58,21 @@ form.addEventListener("submit", (e) => {
     }
     
 });
+
+/* CHECKBOX */
+
+var checkbox = document.getElementById("endDateCheck");
+var endDate = document.getElementById("endDateCalendar");
+var endDateLabel = document.getElementById("endDateLabel");
+
+checkbox.addEventListener("click", function(){
+    if (checkbox.checked == true) {
+        endDate.style.display = "block";
+        endDateLabel.style.display ="block";
+    } else {
+        endDate.style.display = "none";
+        endDateLabel.style.display ="none";
+    }
+})
+
+

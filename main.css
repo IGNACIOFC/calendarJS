@@ -226,6 +226,9 @@ header h2 {
     justify-content: center;
     align-items: center;
     display: none;
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+    z-index: 1;
 }
 .container-modal{
     margin: 0 auto;
@@ -337,6 +340,9 @@ fieldset input{
 
 .eventModal{
     display: none;
+    animation-name: modalopen;
+    animation-duration: 0.2s;
+    z-index: 2;
 }
 .closeEvent{
     color: #aaaaaa;
@@ -356,4 +362,23 @@ fieldset input{
 .calendar-event {
     background-color: aquamarine;
     cursor: pointer;
+}
+
+/* MODAL ANIMATION */
+
+@keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+}
+
+#endDateLabel {
+    display: none;
+}
+#endDateCalendar {
+    display: none;
 }
