@@ -5,6 +5,7 @@ function isReminderEvent() {
     console.log("check remind")
     let allMyEvents = [];
     allMyEvents = getStoreInformation();
+    document.getElementById("warning-box").innerHTML = `<h2>Expired events</h2>`;
     for (let index = 0; index < allMyEvents.length; index++) {
         if (allMyEvents[index].remind) {
             let now = Date.now();
@@ -20,6 +21,29 @@ function isReminderEvent() {
 
             if (endDateMil - now < 0) {
                 document.getElementById(index).style.backgroundColor = "red";
+                document.getElementById("warning-box").style.display = "flex";
+                let newExpiredEventcont = document.createElement("article");
+                let expiredEventTitlecont = document.createElement("h3");
+                let expiredEventStartDatecont = document.createElement("p");
+                let expiredEventEndDatecont = document.createElement("p");
+                expiredEventTitlecont.innerHTML = allMyEvents[index].title;
+                expiredEventStartDatecont.innerHTML = "Start date: " + allMyEvents[index].startDate;
+                expiredEventEndDatecont.innerHTML = "End date: " + allMyEvents[index].endDate;
+                newExpiredEventcont.appendChild(expiredEventTitlecont);
+                newExpiredEventcont.appendChild(expiredEventStartDatecont);
+                newExpiredEventcont.appendChild(expiredEventEndDatecont);
+
+                if (allMyEvents[index].description != "") {
+                    let expiredEventDescriptioncont = document.createElement("p");
+                    expiredEventDescriptioncont.innerHTML = "Description: " + allMyEvents[index].description;
+                    newExpiredEventcont.appendChild(expiredEventDescriptioncont);
+                }
+                if (allMyEvents[index].description != "") {
+                    let expiredEventTypecont = document.createElement("p");
+                    expiredEventTypecont.innerHTML = "Type: " + allMyEvents[index].type;
+                    newExpiredEventcont.appendChild(expiredEventDescriptioncont);
+                }
+                document.getElementById("warning-box").appendChild(newExpiredEventcont)
                 console.log(endDateMil)
                 console.log(now)
                 console.log(endDateMil - now);
