@@ -20,7 +20,7 @@ function isReminderEvent() {
             let endDateMil = Date.parse(endDate);
 
             if (endDateMil - now < 0) {
-                document.getElementById(index).style.backgroundColor = "red";
+                document.querySelector("p[id='"+ index.toString() + "']").style.backgroundColor = "red";
                 document.getElementById("warning-box").style.display = "flex";
                 let newExpiredEventcont = document.createElement("article");
                 let expiredEventTitlecont = document.createElement("h3");
@@ -48,9 +48,6 @@ function isReminderEvent() {
                 console.log(now)
                 console.log(endDateMil - now);
                 let passTime = new Date(now-endDateMil);
-                /* console.log(passTime.getMinutes());
-                console.log(passTime.getHours());
-                console.log(passTime.getD()); */
             }
         }
         

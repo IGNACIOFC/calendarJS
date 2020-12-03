@@ -65,5 +65,6 @@ function removeEventFromMyMemory (e) {
     console.log("Eventos number " + allMyEvents.length);
     localStorage.setItem("myEvents", JSON.stringify(allMyEvents));
     document.getElementById("eventModal").style.display = "none";
-    showEventsInCalendar(actualMonthNumber, actualYear);
+    
+    showEventsInCalendar(actualMonthNumber - 1, actualYear);
 }
