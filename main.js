@@ -58,3 +58,30 @@ form.addEventListener("submit", (e) => {
     }
     
 });
+
+/* CHECKBOX */
+
+var checkboxDate = document.getElementById("endDateCheck");
+var endDate = document.getElementById("endDateCalendar");
+var endDateLabel = document.getElementById("endDateLabel");
+var timeSelect = document.getElementById("timeSelect");
+var remainder = document.getElementById("remainder");
+
+checkboxDate.addEventListener("click", function(){
+    if (checkboxDate.checked == true) {
+        endDate.style.display = "block";
+        endDateLabel.style.display ="block";
+    } else {
+        endDate.style.display = "none";
+        endDateLabel.style.display ="none";
+    }
+})
+
+remainder.addEventListener("click", function(){
+    if (remainder.checked == true) {
+        timeSelect.style.display = "block";
+    } else {
+        timeSelect.style.display = "none";
+    }
+})
+

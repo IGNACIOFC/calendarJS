@@ -46,8 +46,8 @@ header {
     background-color: white;
 }
 header h2 {
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 700;
+    font-size: 30px;
 }
 
 /* CALENDAR CONTENT */
@@ -60,11 +60,17 @@ header h2 {
 .header h3{
     min-width: 150px;
 }
+.header h3 p{
+    font-weight: 700;
+    font-size: 30px;
+}
 .month{
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 30px;
 }
 .year{
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 30px;
 }
 .main-content{
     margin: 0 auto;
@@ -220,6 +226,9 @@ header h2 {
     justify-content: center;
     align-items: center;
     display: none;
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+    z-index: 1;
 }
 .container-modal{
     margin: 0 auto;
@@ -331,6 +340,9 @@ fieldset input{
 
 .eventModal{
     display: none;
+    animation-name: modalopen;
+    animation-duration: 0.2s;
+    z-index: 2;
 }
 .closeEvent{
     color: #aaaaaa;
@@ -350,4 +362,26 @@ fieldset input{
 .calendar-event {
     background-color: aquamarine;
     cursor: pointer;
+}
+
+/* MODAL ANIMATION */
+
+@keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+}
+
+#endDateLabel {
+    display: none;
+}
+#endDateCalendar {
+    display: none;
+}
+#timeSelect {
+    display: none;
 }
