@@ -57,7 +57,7 @@ function removeEventFromMyMemory (e) {
     index = e.target.getAttribute("id");
     e.target.removeAttribute("id");
     console.log("remove" + index);
-
+    document.getElementById(index).remove();
     let allMyEvents = [];
     allMyEvents = getStoreInformation();
     console.log("Eventos number " + allMyEvents.length);

@@ -52,4 +52,7 @@ function isReminderEvent() {
         }
         
     }
+    if (document.getElementById("warning-box").childNodes.length == 1) {
+        document.getElementById("warning-box").style.display = "none";
+    }
 }
